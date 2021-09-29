@@ -16,15 +16,15 @@ const icon ={
 
 export function HighlightCard({name,value,description,type} : Card){
     return(
-        <Container>
+        <Container type = {type}>
             <Header>
-                <Title> {name}</Title>
+                <Title type = {type}> {name}</Title>
                 <Icon name = {icon[type]} type = {type}/>
             </Header>
 
             <Footer>
-                <Amount>{value}</Amount>
-                <LastTransaction> {description}</LastTransaction>
+                <Amount type = {type}>{value}</Amount>
+                <LastTransaction type = {type}> {description}</LastTransaction>
             </Footer>
         </Container>
     )

@@ -31,6 +31,7 @@ export function Dashboard({title} : Props) {
             <HighlightCard type = 'total' name='Total' value = 'R$ 16.141,00' description = '01 à 16 de abril'/>
             </HighlightCards>
 
+            
             </Container>
         )
 

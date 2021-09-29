@@ -1,11 +1,17 @@
 import { Feather } from '@expo/vector-icons';
 import { getStatusBarHeight, ifIphoneX } from 'react-native-iphone-x-helper';
 import { RFValue } from 'react-native-responsive-fontsize';
-import styled from "styled-components/native";
+import styled, { css } from "styled-components/native";
 
 
-export const Container = styled.View`
-    background-color: ${({theme}) => theme.colors.shape};
+interface TypeProps{
+    type: 'up' | 'down' | 'total'
+
+}
+
+export const Container = styled.View<TypeProps>`
+    background-color: ${({theme, type}) => type === 'total' ? theme.colors.secondary : theme.colors.shape};
+
     height: ${RFValue(200)}px;
     width: ${RFValue(300)}px;
     margin-left: 24px;
@@ -22,8 +28,9 @@ export const Header = styled.View`
 
 `;
 
-export const Title = styled.Text`
-    color: ${({theme}) => theme.colors.title};
+export const Title = styled.Text<TypeProps>`
+    color: ${({theme, type}) => type === 'total' ? theme.colors.shape : theme.colors.title};
+
     padding-left: ${RFValue(23)}px;;
 
     font-family: ${({theme}) => theme.fonts.regular};
@@ -31,18 +38,24 @@ export const Title = styled.Text`
 
 `;
 
-export const Icon = styled(Feather)`
+export const Icon = styled(Feather)<TypeProps>`
     padding-right: ${RFValue(20)}px;;
     font-size: ${RFValue(40)}px;
-    color: ${({theme}) => theme.colors.sucess};
+    
+    
+    ${({type})=> type === 'up' && css`color: ${({theme}) => theme.colors.sucess};`};
+    ${({type})=> type === 'down' && css`color: ${({theme}) => theme.colors.attention}`};
+    ${({type})=> type === 'total' && css`color: ${({theme}) => theme.colors.shape};`};
+
     `;
 
 export const Footer = styled.View`
     margin-bottom: ${RFValue(35)}px;
 `;
 
-export const Amount = styled.Text`
-    color: ${({theme}) => theme.colors.title};
+export const Amount = styled.Text<TypeProps>`
+    color: ${({theme, type}) => type === 'total' ? theme.colors.shape : theme.colors.title};
+
     font-family: ${({theme}) => theme.fonts.medium};
     font-size: ${RFValue(32)}px;
     padding-left: ${RFValue(22)}px;;
@@ -52,8 +65,8 @@ export const Amount = styled.Text`
 
 `;
 
-export const LastTransaction = styled.Text`
- color: ${({theme}) => theme.colors.text};
+export const LastTransaction = styled.Text<TypeProps>`
+    color: ${({theme, type}) => type === 'total' ? theme.colors.shape : theme.colors.text};
     font-family: ${({theme}) => theme.fonts.regular};
     font-size: ${RFValue(12)}px;
     padding-left: ${RFValue(22)}px;;
