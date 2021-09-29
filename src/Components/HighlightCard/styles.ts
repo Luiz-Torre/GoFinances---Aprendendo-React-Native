@@ -9,6 +9,7 @@ export const Container = styled.View`
     width: ${RFValue(300)}px;
     margin-left: 24px;
     border-radius: 5px;
+    justify-content: space-between;
 `;
 
 
@@ -35,8 +36,25 @@ export const Icon = styled(Feather)`
     color: ${({theme}) => theme.colors.sucess};
     `;
 
-export const Footer = styled.View``;
+export const Footer = styled.View`
+    margin-bottom: ${RFValue(36)}px;
+`;
 
-export const Amount = styled.Text``;
+export const Amount = styled.Text`
+    color: ${({theme}) => theme.colors.title};
+    font-family: ${({theme}) => theme.fonts.medium};
+    font-size: ${RFValue(32)}px;
+    padding-left: ${RFValue(16.2)}px;;
 
-export const LastTransaction = styled.Text``;
+;
+
+
+`;
+
+export const LastTransaction = styled.Text`
+ color: ${({theme}) => theme.colors.text};
+    font-family: ${({theme}) => theme.fonts.regular};
+    font-size: ${RFValue(12)}px;
+    padding-left: ${RFValue(22)}px;;
+    
+`;
