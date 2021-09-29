@@ -1,0 +1,3 @@
+[submodule "GoFinances"]
+	path = GoFinances
+	url = https://github.com/Luiz-Torre/GoFinances---Aprendendo-React-Native
