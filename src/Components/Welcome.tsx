@@ -1,10 +1,14 @@
 import React from 'react'
 import { Text, View } from 'react-native'
 
-export function Welcome() {
+interface Props{
+    title: string;
+}
+
+export function Welcome({title} : Props) {
     return(
             <View>
-                <Text> Bare WorkFlow com TypeScript </Text>
+                <Text> {title} </Text>
             </View>
         )
 

@@ -1,10 +1,11 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { Welcome } from './src/Components/Welcome';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Paulo é bobão kkkkkk! Luiz é lindo! Oi mãe. Manda o paulo ir dormir.</Text>
+      <Welcome title = "oi"/>
     </View>
   );
 }
@@ -12,7 +13,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#fafafa',
     alignItems: 'center',
     justifyContent: 'center',
   },
