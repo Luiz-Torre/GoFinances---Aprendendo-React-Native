@@ -9,8 +9,8 @@ import {
 } from '@expo-google-fonts/poppins';
 
 import AppLoading from 'expo-app-loading';
-import theme from './src/Components/global/styles/theme'
-import { Dashboard } from './src/Components/screens/DashBoard';
+import theme from './src/global/styles/theme'
+import { Dashboard } from './src/screens/DashBoard';
 
  
 

@@ -22,6 +22,7 @@ export const UserWrapper = styled.View`
     padding: 0 ${RFValue(24)}px;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
 `;
 
 export const UserInfo = styled.View`
