@@ -5,7 +5,7 @@ import {Feather} from '@expo/vector-icons';
 
 export const Container = styled.View`
     flex:1;
-    background-color: ${({theme }) => theme.colors.backgruound};
+    background-color: ${({theme }) => theme.colors.background};
 
 `;
 
@@ -20,6 +20,8 @@ export const Header = styled.View`
 export const UserWrapper = styled.View`
     width:100%;
     padding: 0 ${RFValue(24)}px;
+    flex-direction: row;
+    justify-content: space-between;
 `;
 
 export const UserInfo = styled.View`
@@ -28,14 +30,14 @@ export const UserInfo = styled.View`
 `;
 
 export const Hello = styled.Text`
-    color: ${({theme}) => theme.colors.backgruound};
+    color: ${({theme}) => theme.colors.background};
     font-size: ${RFValue(18)}px;
 
     font-family: ${({theme}) => theme.fonts.regular};
 `;
 
 export const UserName = styled.Text`
-    color: ${({theme}) => theme.colors.backgruound};
+    color: ${({theme}) => theme.colors.background};
     font-size: ${RFValue(18)}px;
     font-family: ${({theme}) => theme.fonts.bold};
 `;
