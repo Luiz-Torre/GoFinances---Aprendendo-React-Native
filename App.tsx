@@ -1,11 +1,11 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { Welcome } from './src/Components/screens/Welcome';
+import { Dashboard } from './src/Components/screens/DashBoard';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Welcome title = "oie"/>
+      <Dashboard title = "oie"/>
     </View>
   );
 }

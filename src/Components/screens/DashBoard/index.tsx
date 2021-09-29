@@ -1,15 +1,16 @@
 import React from 'react'
 import { Text, View } from 'react-native'
+import { Container } from './styles'
 
 interface Props{
     title: string;
 }
 
-export function Welcome({title} : Props) {
+export function Dashboard({title} : Props) {
     return(
-            <View>
+            <Container>
                 <Text> {title} </Text>
-            </View>
+            </Container>
         )
 
 }
