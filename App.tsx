@@ -1,20 +1,16 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import {ThemeProvider} from 'styled-components'
+
+import theme from './src/Components/global/styles/theme'
 import { Dashboard } from './src/Components/screens/DashBoard';
+
+ 
 
 export default function App() {
   return (
-    <View style={styles.container}>
+    <ThemeProvider theme={theme}>
+
       <Dashboard title = "Dashboard"/>
-    </View>
+    </ThemeProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fafafa',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
