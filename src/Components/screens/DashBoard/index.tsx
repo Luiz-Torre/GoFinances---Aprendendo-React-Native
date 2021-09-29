@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Title } from './styles'
+import { Container, Header } from './styles'
 
 interface Props{
     title: string;
@@ -8,7 +8,7 @@ interface Props{
 export function Dashboard({title} : Props) {
     return(
             <Container>
-                <Title> {title} </Title>
+                <Header></Header>
             </Container>
         )
 
