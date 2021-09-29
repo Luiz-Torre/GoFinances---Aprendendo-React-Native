@@ -5,7 +5,7 @@ import { Dashboard } from './src/Components/screens/DashBoard';
 export default function App() {
   return (
     <View style={styles.container}>
-      <Dashboard title = "oie"/>
+      <Dashboard title = "Dashboard"/>
     </View>
   );
 }
