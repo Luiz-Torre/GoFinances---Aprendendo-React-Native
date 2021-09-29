@@ -1,4 +1,5 @@
 import { Feather } from '@expo/vector-icons';
+import { getStatusBarHeight, ifIphoneX } from 'react-native-iphone-x-helper';
 import { RFValue } from 'react-native-responsive-fontsize';
 import styled from "styled-components/native";
 
@@ -37,14 +38,14 @@ export const Icon = styled(Feather)`
     `;
 
 export const Footer = styled.View`
-    margin-bottom: ${RFValue(36)}px;
+    margin-bottom: ${RFValue(35)}px;
 `;
 
 export const Amount = styled.Text`
     color: ${({theme}) => theme.colors.title};
     font-family: ${({theme}) => theme.fonts.medium};
     font-size: ${RFValue(32)}px;
-    padding-left: ${RFValue(16.2)}px;;
+    padding-left: ${RFValue(22)}px;;
 
 ;
 
@@ -56,5 +57,14 @@ export const LastTransaction = styled.Text`
     font-family: ${({theme}) => theme.fonts.regular};
     font-size: ${RFValue(12)}px;
     padding-left: ${RFValue(22)}px;;
-    
+`;
+
+export const HighlightCards = styled.ScrollView.attrs({
+    horizontal: true,
+    showsHorizontalScrollIndicator: false,
+})`
+    width: 100%;
+    position: absolute;
+    margin-top: ${getStatusBarHeight()+RFValue(110)}px;
+
 `;
