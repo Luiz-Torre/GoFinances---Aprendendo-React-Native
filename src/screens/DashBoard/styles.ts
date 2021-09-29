@@ -31,14 +31,14 @@ export const UserInfo = styled.View`
 `;
 
 export const Hello = styled.Text`
-    color: ${({theme}) => theme.colors.background};
+    color: ${({theme}) => theme.colors.shape};
     font-size: ${RFValue(18)}px;
 
     font-family: ${({theme}) => theme.fonts.regular};
 `;
 
 export const UserName = styled.Text`
-    color: ${({theme}) => theme.colors.background};
+    color: ${({theme}) => theme.colors.shape};
     font-size: ${RFValue(18)}px;
     font-family: ${({theme}) => theme.fonts.bold};
 `;
