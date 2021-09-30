@@ -1,16 +1,18 @@
 import React from 'react'
 import { HighlightCard } from '../../Components/HighlightCard'
 import { HighlightCards } from '../../Components/HighlightCard/styles'
-import { ListagemCard } from '../../Components/Listagem'
+import { ListagemCard, TransactionCardProps } from '../../Components/Listagem'
 
 import { Container, Listagem,ListagemText,Header, Hello, UserName, Photo, User, UserInfo, UserWrapper, Icon, TransactionList } from './styles'
 
 interface Props{
     title: string;
 }
+export interface DataListProps extends TransactionCardProps{
+    id: string
+}
 
-
- const data = [
+ const data :DataListProps[] = [
     {
     id: '1',
     title: "Desenvolvimento de site",
@@ -45,6 +47,7 @@ interface Props{
     date: "13/04/2020"
   }
 ]
+
 
 
 export function Dashboard({title} : Props) {

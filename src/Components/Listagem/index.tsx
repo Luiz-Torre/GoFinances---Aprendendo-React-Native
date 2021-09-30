@@ -8,7 +8,7 @@ interface Category {
     icon: string;
   }
   
-    interface Data {
+export interface TransactionCardProps {
     type : 'positive' | 'negative'
     title: string;
     value: string;
@@ -16,9 +16,9 @@ interface Category {
     date: string;
     }
 
-    interface Props {
-        data: Data;
-      }
+interface Props {
+    data: TransactionCardProps;
+}
 
 
 export function ListagemCard({data} : Props){
