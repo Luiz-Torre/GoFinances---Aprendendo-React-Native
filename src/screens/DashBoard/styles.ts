@@ -60,3 +60,16 @@ export const Icon = styled(Feather)`
     color: ${({theme})=> theme.colors.secondary};
     font-size: ${RFValue(24)}px;
 `;
+
+
+export const Listagem = styled.View`
+    margin-top: ${RFValue(84)}px;
+`;
+
+export const ListagemText = styled.Text`
+    padding-left: ${RFValue(24)}px;
+    font-size: ${RFValue(18)}px;
+    color: ${({theme}) => theme.colors.text_dark};
+    font-family: ${({theme}) => theme.fonts.regular};
+
+`;

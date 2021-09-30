@@ -1,5 +1,5 @@
 import React from 'react';
-import {Container, Header, Title, Payment, Footer,Icon, Category, Date } from './style';
+import {Container, Header, Title, Payment, Footer,Icon, CategoryName, Date, Category } from './style';
 
 interface List{
     name: string;
@@ -9,21 +9,24 @@ interface List{
 }
 const icon ={
     total: 'arrow-up-circle',
-    Alimentação: 'coffe',
+    Alimentação: 'coffee',
     Vendas: 'dollar-sign'
 }
 
-export function Listagem({name, value, date, category} : List){
+export function ListagemCard({name, value, date, category} : List){
     return(
         <Container>
             <Header>
                 <Title >{name}</Title>
-                <Payment category = {category}> {value}</Payment>
+                {category === 'Vendas' ? <Payment category = {category}>{value}</Payment> : <Payment category = {category}>- {value}</Payment> }
             </Header>
 
             <Footer>
-                <Icon name = {icon[category]}/>
-                <Category>{category} </Category>
+                <Category>
+
+                    <Icon name = {icon[category]}/>
+                    <CategoryName>{category} </CategoryName>
+                </Category>
                 <Date> {date}</Date>
             </Footer>
         </Container>
