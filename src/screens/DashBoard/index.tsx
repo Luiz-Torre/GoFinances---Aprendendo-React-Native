@@ -3,11 +3,49 @@ import { HighlightCard } from '../../Components/HighlightCard'
 import { HighlightCards } from '../../Components/HighlightCard/styles'
 import { ListagemCard } from '../../Components/Listagem'
 
-import { Container, Listagem,ListagemText,Header, Hello, UserName, Photo, User, UserInfo, UserWrapper, Icon } from './styles'
+import { Container, Listagem,ListagemText,Header, Hello, UserName, Photo, User, UserInfo, UserWrapper, Icon, TransactionList } from './styles'
 
 interface Props{
     title: string;
 }
+
+
+ const data = [
+    {
+    id: '1',
+    title: "Desenvolvimento de site",
+    type: 'positive',
+    value: "R$ 12.000,00",
+    category: {
+      name: 'Vendas',
+      icon: 'dollar-sign'
+    },
+    date: "13/04/2020"
+  },
+  {
+    id: '2',
+    title: "Compra no Ifood",
+    type: 'negative',
+    value: "R$ 1.000,00",
+    category: {
+      name: 'Alimentação',
+      icon: 'coffee'
+    },
+    date: "13/04/2020"
+  },
+  {
+    id: '3',
+    title: "Aluguel da Mansão",
+    type: 'negative',
+    value: "R$ 10.500,00",
+    category: {
+      name: 'Pagamento',
+      icon: 'home'
+    },
+    date: "13/04/2020"
+  }
+]
+
 
 export function Dashboard({title} : Props) {
     return(
@@ -34,9 +72,12 @@ export function Dashboard({title} : Props) {
 
                 <Listagem>
                     <ListagemText>Listagem</ListagemText>
-                    <ListagemCard name = 'Desenvolvimento de Site' value = 'R$12.000,00' category = 'Vendas' date = '13/04/2020'/>
+                    <TransactionList
+                        data={data}
+                        keyExtractor = {item => item.id}
+                        renderItem={({ item }) => <ListagemCard data={item} />}
+                        />
 
-                    <ListagemCard name = 'Pizzaria Pizzy' value = 'R$59,00' category = 'Alimentação' date = '13/04/2020'/>
                 </Listagem>
             </Container>
         )

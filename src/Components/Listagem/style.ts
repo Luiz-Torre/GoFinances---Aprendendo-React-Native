@@ -5,7 +5,7 @@ import styled, { css } from "styled-components/native";
 
 
 interface TypeProps{
-    category: 'Vendas' | 'Alimentação' | 'total'
+    type : 'positive' | 'negative'
 
 }
 
@@ -38,7 +38,7 @@ export const Title = styled.Text`
 `;
 export const Payment = styled.Text<TypeProps> `
     font-size: ${RFValue(20)}px;
-    color : ${({theme, category}) => category === 'Vendas'? theme.colors.sucess : theme.colors.attention}
+    color : ${({theme, type}) => type === 'positive'? theme.colors.sucess : theme.colors.attention}
 `;
 export const Footer = styled.View`
     flex-direction: row;

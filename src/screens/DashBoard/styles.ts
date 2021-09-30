@@ -1,7 +1,7 @@
 import styled from "styled-components/native";
 import { RFPercentage, RFValue } from 'react-native-responsive-fontsize';
 import {Feather} from '@expo/vector-icons';
-import {getStatusBarHeight} from 'react-native-iphone-x-helper'
+import {getBottomSpace, getStatusBarHeight} from 'react-native-iphone-x-helper'
 
 export const Container = styled.View`
     flex:1;
@@ -63,6 +63,7 @@ export const Icon = styled(Feather)`
 
 
 export const Listagem = styled.View`
+    flex: 1%;
     margin-top: ${RFValue(84)}px;
 `;
 
@@ -72,4 +73,13 @@ export const ListagemText = styled.Text`
     color: ${({theme}) => theme.colors.text_dark};
     font-family: ${({theme}) => theme.fonts.regular};
 
+`;
+
+export const TransactionList = styled.FlatList.attrs({
+    showsVerticalScrollIndicator : false,
+    contentContainerStyle:{
+    paddingBottom: getBottomSpace()
+    }
+})`
+  
 `;

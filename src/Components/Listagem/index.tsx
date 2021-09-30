@@ -1,33 +1,41 @@
 import React from 'react';
 import {Container, Header, Title, Payment, Footer,Icon, CategoryName, Date, Category } from './style';
 
-interface List{
-    name: string;
-    value: string;
-    date: string;
-    category: 'Vendas' | 'Alimentação' | 'total'
-}
-const icon ={
-    total: 'arrow-up-circle',
-    Alimentação: 'coffee',
-    Vendas: 'dollar-sign'
-}
 
-export function ListagemCard({name, value, date, category} : List){
+
+interface Category {
+    name: string;
+    icon: string;
+  }
+  
+    interface Data {
+    type : 'positive' | 'negative'
+    title: string;
+    value: string;
+    category: Category;
+    date: string;
+    }
+
+    interface Props {
+        data: Data;
+      }
+
+
+export function ListagemCard({data} : Props){
     return(
         <Container>
             <Header>
-                <Title >{name}</Title>
-                {category === 'Vendas' ? <Payment category = {category}>{value}</Payment> : <Payment category = {category}>- {value}</Payment> }
+                <Title >{data.title}</Title>
+                {data.type === 'positive' ? <Payment type = {data.type}>{data.value}</Payment> : <Payment type = {data.type}>- {data.value}</Payment> }
             </Header>
 
             <Footer>
                 <Category>
 
-                    <Icon name = {icon[category]}/>
-                    <CategoryName>{category} </CategoryName>
+                    <Icon name = {data.category.icon}/>
+                    <CategoryName>{data.category.name} </CategoryName>
                 </Category>
-                <Date> {date}</Date>
+                <Date> {data.date}</Date>
             </Footer>
         </Container>
     )
