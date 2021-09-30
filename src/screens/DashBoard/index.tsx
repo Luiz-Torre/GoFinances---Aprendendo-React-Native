@@ -34,7 +34,9 @@ export function Dashboard({title} : Props) {
 
                 <Listagem>
                     <ListagemText>Listagem</ListagemText>
-                    <ListagemCard name = 'Desenvolvimento de Site' value = 'R$12.000,00' category = 'Alimentação' date = '13/04/2020'/>
+                    <ListagemCard name = 'Desenvolvimento de Site' value = 'R$12.000,00' category = 'Vendas' date = '13/04/2020'/>
+
+                    <ListagemCard name = 'Pizzaria Pizzy' value = 'R$59,00' category = 'Alimentação' date = '13/04/2020'/>
                 </Listagem>
             </Container>
         )

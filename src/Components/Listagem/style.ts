@@ -19,6 +19,8 @@ export const Container = styled.View`
     border-radius: 5px;
     background-color: ${({theme}) => theme.colors.shape};
     justify-content: space-between;
+    margin-bottom: ${RFValue(16)}px;
+
 `;
 
 
